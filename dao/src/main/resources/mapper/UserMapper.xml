@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.laf.dao.mapper.UserMapper">
+
+    <!--    根据用户名查找用户id （用户注册时查找新增用户id用）-->
+    <select id="selectUserIdByUserName" resultType="java.lang.Long">
+        SELECT su.id
+        FROM sys_user su
+        WHERE su.user_name = #{userName};
+    </select>
+    <!--    根据用户id获取用户登录status-->
+    <select id="getUserStatus" resultType="java.lang.String">
+        SELECT su.`status`
+        FROM `sys_user` su
+        WHERE su.id = #{id};
+    </select>
+    <!--    获取用户是否为管理员-->
+    <select id="getUserAdminStatus" resultType="java.lang.String">
+        SELECT su.`admin`
+        FROM `sys_user` su
+        WHERE su.id = #{id};
+    </select>
+</mapper>

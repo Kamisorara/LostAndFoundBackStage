@@ -1,0 +1,35 @@
+spring:
+  #配置数据源
+  datasource:
+    url: jdbc:mysql://192.168.36.100:3306/LostAndFound?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: MyDifficultPass4@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #配置redis
+  redis:
+    host: 127.0.0.1
+  #  #配置mail信息
+  mail:
+    host: smtp.163.com
+    username: @163.com
+    password:
+    port: 465
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+#配置mybatis-plus信息
+mybatis-plus:
+  #  global-config:
+  #    db-config:
+  #       id生成策略 auto为数据库自增
+  #     id-type: auto
+  mapper-locations: classpath*:/mapper/**/*.xml
+#服务器端口
+server:
+  port: 8082
